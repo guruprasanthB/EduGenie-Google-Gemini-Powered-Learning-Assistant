@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f5f7f3">
+	<title>EduGenie AI | Study desk</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+</head>
+<body>
+	<div class="app-shell">
+		<header class="topbar">
+			<a class="brand-lockup" href="/" aria-label="EduGenie AI home">
+				<span class="brand-mark" aria-hidden="true">e</span>
+				<span class="brand-name">EduGenie <span>AI</span></span>
+			</a>
+			<div class="health-status" id="health-status" data-ready="false" role="status">
+				<span class="health-dot" aria-hidden="true"></span>
+				<span id="health-label">Checking AI status</span>
+			</div>
+		</header>
+
+		<main class="main-content">
+			<section class="workspace-heading" aria-labelledby="page-title">
+				<div>
+					<p class="eyebrow">Your learning workspace</p>
+					<h1 id="page-title">Study desk</h1>
+					<p>Ask, explore, and make your next study session count.</p>
+				</div>
+			</section>
+
+			<nav class="tool-nav" role="tablist" aria-label="Study tools">
+				<button class="tool-tab" type="button" role="tab" data-mode="qa" aria-selected="true">Ask</button>
+				<button class="tool-tab" type="button" role="tab" data-mode="explain" aria-selected="false">Explain</button>
+				<button class="tool-tab" type="button" role="tab" data-mode="quiz" aria-selected="false">Quiz</button>
+				<button class="tool-tab" type="button" role="tab" data-mode="summarize" aria-selected="false">Summarize</button>
+				<button class="tool-tab" type="button" role="tab" data-mode="learn" aria-selected="false">Learning path</button>
+			</nav>
+
+			<section class="work-grid" aria-label="Study tool">
+				<form class="input-panel" id="study-form">
+					<p class="panel-kicker">Your prompt</p>
+					<h2 class="panel-title" id="form-title">Ask a question</h2>
+					<p class="panel-description" id="form-description">Get a clear, considered answer with the important ideas up front.</p>
+					<div class="form-fields" id="form-fields"></div>
+					<button class="primary-action" id="submit-button" type="submit">
+						<span id="submit-label">Get an answer</span>
+						<span class="action-arrow" aria-hidden="true">&#8594;</span>
+					</button>
+					<p class="footnote">AI responses can be wrong. Check important facts against trusted sources.</p>
+				</form>
+
+				<section class="output-panel" aria-live="polite" aria-busy="false">
+					<div class="result-heading">
+						<h2 id="result-title">Your result</h2>
+						<div class="result-actions">
+							<button class="text-action" id="copy-button" type="button" hidden>Copy</button>
+							<button class="text-action" id="clear-button" type="button">Clear</button>
+						</div>
+					</div>
+					<div class="result-content" id="result-content">
+						<div class="empty-state">
+							<span class="empty-mark" aria-hidden="true">?</span>
+							<strong>Your study space is ready</strong>
+							<span>Choose a tool, add a prompt, and your response will appear here.</span>
+						</div>
+					</div>
+				</section>
+			</section>
+		</main>
+	</div>
+	<script src="{{ url_for('static', path='css/js/app.js') }}" defer></script>
+</body>
+</html>
